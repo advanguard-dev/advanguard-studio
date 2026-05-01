@@ -227,10 +227,12 @@ import Layout from '../layouts/Layout.astro'
 
   <script is:inline>
     document.querySelectorAll('.faq-q').forEach(function(btn){
+      btn.setAttribute('aria-expanded', 'false');
       btn.addEventListener('click', function(){
         var item = btn.closest('.faq-item');
         if(!item) return;
         item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
       });
     });
   </script>
