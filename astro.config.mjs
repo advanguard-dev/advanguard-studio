@@ -4,7 +4,7 @@ import react from '@astrojs/react'
 import keystatic from '@keystatic/astro'
 
 export default defineConfig({
-  output: 'server',
+  output: 'static',
   adapter: vercel(),
   integrations: [react(), keystatic()],
 })
