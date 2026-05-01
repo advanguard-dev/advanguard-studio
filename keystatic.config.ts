@@ -1,11 +1,12 @@
 import { config, collection, fields } from '@keystatic/core'
 
-const isGithub = process.env.KEYSTATIC_STORAGE === 'github'
-
 export default config({
-  storage: isGithub
-    ? { kind: 'github', repo: 'advanguard-dev/advanguard-studio' }
-    : { kind: 'local' },
+  storage: {
+    kind: 'cloud',
+  },
+  cloud: {
+    project: 'advanguard-studio/advanguard-studio',
+  },
 
   ui: {
     brand: { name: 'Advanguard CMS' },

@@ -1,0 +1,189 @@
+{
+  "$metadata": {
+    "tokenSetOrder": ["typography"]
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$description": "Display XL — hero headings",
+      "$value": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "clamp(64px, 11vw, 180px)",
+        "fontWeight": "500",
+        "letterSpacing": "-0.04em",
+        "lineHeight": "0.88",
+        "textTransform": "none"
+      }
+    },
+    "display-hero": {
+      "$type": "typography",
+      "$description": "Display Hero — monogram, oversized display",
+      "$value": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "clamp(90px, 16vw, 260px)",
+        "fontWeight": "700",
+        "letterSpacing": "-0.06em",
+        "lineHeight": "0.82",
+        "textTransform": "none"
+      }
+    },
+    "display-section": {
+      "$type": "typography",
+      "$description": "Display Section — section headings h2",
+      "$value": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "clamp(40px, 6.2vw, 88px)",
+        "fontWeight": "500",
+        "letterSpacing": "-0.03em",
+        "lineHeight": "0.92",
+        "textTransform": "none"
+      }
+    },
+    "display-accent": {
+      "$type": "typography",
+      "$description": "Display Accent — italic serif inside headings (em tags). Size inherits from parent.",
+      "$value": {
+        "fontFamily": "Instrument Serif",
+        "fontSize": "0.9em",
+        "fontWeight": "400",
+        "fontStyle": "italic",
+        "letterSpacing": "0",
+        "lineHeight": "inherit",
+        "textTransform": "none"
+      }
+    },
+    "heading-l": {
+      "$type": "typography",
+      "$description": "Heading L — formation/service detail h3",
+      "$value": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "clamp(36px, 4.5vw, 64px)",
+        "fontWeight": "500",
+        "letterSpacing": "-0.03em",
+        "lineHeight": "0.95",
+        "textTransform": "none"
+      }
+    },
+    "heading-m": {
+      "$type": "typography",
+      "$description": "Heading M — sub-section headings",
+      "$value": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "28px",
+        "fontWeight": "500",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "1.1",
+        "textTransform": "none"
+      }
+    },
+    "heading-decorative": {
+      "$type": "typography",
+      "$description": "Heading Decorative — large italic serif accent (standalone)",
+      "$value": {
+        "fontFamily": "Instrument Serif",
+        "fontSize": "92px",
+        "fontWeight": "400",
+        "fontStyle": "italic",
+        "letterSpacing": "-0.02em",
+        "lineHeight": "0.9",
+        "textTransform": "none"
+      }
+    },
+    "body-l": {
+      "$type": "typography",
+      "$description": "Body L — hero lede, lead paragraphs",
+      "$value": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "22px",
+        "fontWeight": "400",
+        "letterSpacing": "0",
+        "lineHeight": "1.25",
+        "textTransform": "none"
+      }
+    },
+    "body-m": {
+      "$type": "typography",
+      "$description": "Body M — standard body text",
+      "$value": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "17px",
+        "fontWeight": "400",
+        "letterSpacing": "0",
+        "lineHeight": "1.6",
+        "textTransform": "none"
+      }
+    },
+    "body-s": {
+      "$type": "typography",
+      "$description": "Body S — captions, secondary text, footer",
+      "$value": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "letterSpacing": "0",
+        "lineHeight": "1.5",
+        "textTransform": "none"
+      }
+    },
+    "label-m": {
+      "$type": "typography",
+      "$description": "Label M — nav brand, status values",
+      "$value": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "letterSpacing": "0",
+        "lineHeight": "1",
+        "textTransform": "none"
+      }
+    },
+    "label-s": {
+      "$type": "typography",
+      "$description": "Label S — nav links, section markers, mono labels",
+      "$value": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "11px",
+        "fontWeight": "400",
+        "letterSpacing": "0.12em",
+        "lineHeight": "1",
+        "textTransform": "uppercase"
+      }
+    },
+    "label-xs": {
+      "$type": "typography",
+      "$description": "Label XS — tags, badges, status labels",
+      "$value": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "letterSpacing": "0.10em",
+        "lineHeight": "1",
+        "textTransform": "uppercase"
+      }
+    },
+    "label-xxs": {
+      "$type": "typography",
+      "$description": "Label XXS — smallest metadata, footer bot",
+      "$value": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "9px",
+        "fontWeight": "400",
+        "letterSpacing": "0.10em",
+        "lineHeight": "1",
+        "textTransform": "uppercase"
+      }
+    },
+    "tag": {
+      "$type": "typography",
+      "$description": "Tag — pill tags with border, service tags",
+      "$value": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "10px",
+        "fontWeight": "400",
+        "letterSpacing": "0.08em",
+        "lineHeight": "1",
+        "textTransform": "uppercase"
+      }
+    }
+  }
+}

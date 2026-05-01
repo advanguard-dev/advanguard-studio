@@ -1,0 +1,16 @@
+Style Name,Font Name,Size,Weight,Letter Spacing,Line Height,Text Transform,Font Style,Notes
+Display XL,Space Grotesk,"clamp(64px → 180px)",Medium (500),-0.04em,0.88,None,Normal,Hero headings
+Display Hero,Space Grotesk,"clamp(90px → 260px)",Bold (700),-0.06em,0.82,None,Normal,Monogram / oversized display
+Display Section,Space Grotesk,"clamp(40px → 88px)",Medium (500),-0.03em,0.92,None,Normal,Section h2 headings
+Display Accent,Instrument Serif,0.9× parent,Regular (400),0,Inherit,None,Italic,Italic inside headings only — color #BFFE2E
+Heading L,Space Grotesk,"clamp(36px → 64px)",Medium (500),-0.03em,0.95,None,Normal,Service / formation detail h3
+Heading M,Space Grotesk,28px,Medium (500),-0.01em,1.1,None,Normal,Sub-section headings
+Heading Decorative,Instrument Serif,92px,Regular (400),-0.02em,0.9,None,Italic,Standalone large italic accent
+Body L,Space Grotesk,22px,Regular (400),0,1.25,None,Normal,Hero lede / lead paragraphs
+Body M,Space Grotesk,17px,Regular (400),0,1.6,None,Normal,Standard body text
+Body S,Space Grotesk,14px,Regular (400),0,1.5,None,Normal,Captions / secondary / footer
+Label M,Space Grotesk,13px,Medium (500),0,1,None,Normal,Nav brand / status values
+Label S,JetBrains Mono,11px,Regular (400),+0.12em,1,Uppercase,Normal,Nav links / section markers
+Label XS,JetBrains Mono,10px,Regular (400),+0.10em,1,Uppercase,Normal,Tags / badges / status labels
+Label XXS,JetBrains Mono,9px,Regular (400),+0.10em,1,Uppercase,Normal,Smallest metadata / footer
+Tag,JetBrains Mono,10px,Regular (400),+0.08em,1,Uppercase,Normal,Pill tags with border
