@@ -1,8 +1,12 @@
-displayNum: "A / 01"
-title: "Branding"
-titleItalic: "& identité"
-subtitle: "Construire une marque qui dure."
-lede: "Une identité de marque n'est pas un logo. C'est un système — verbal, visuel, comportemental — qui permet à votre entreprise d'être reconnue, mémorisée et choisie. On le construit ensemble, de la stratégie au pixel."
+num: ''
+displayNum: A / 01
+title: Branding
+titleItalic: '& identité'
+subtitle: Construire une marque qui dure.
+lede: >-
+  Une identité de marque n'est pas un logo. C'est un système — verbal, visuel,
+  comportemental — qui permet à votre entreprise d'être reconnue, mémorisée et
+  choisie. On le construit ensemble, de la stratégie au pixel.
 tags:
   - Naming
   - Logotype
@@ -10,28 +14,38 @@ tags:
   - Guidelines
   - Monogrammes
   - Typographie
-metaTarif: "Sur devis — à partir de 3 500 € HT"
-metaDelai: "4 à 8 semaines"
+metaTarif: Sur devis — à partir de 1 500 € HT
+metaDelai: 4 à 8 semaines
 details:
-  - title: "Stratégie de marque"
-    content: "Positionnement, plateforme de marque, territoire verbal, persona. On pose les fondations avant de dessiner."
-  - title: "Naming"
-    content: "Génération et sélection d'un nom mémorable, vérification de disponibilité, déclinaisons."
-  - title: "Identité visuelle"
-    content: "Logotype, palette, typographie, motifs, iconographie. Un système cohérent sur tous les supports."
-  - title: "Guidelines"
-    content: "Un brand book opérationnel que vos équipes et prestataires peuvent appliquer sans vous appeler."
-  - title: "Suivi & évolution"
-    content: "On reste disponibles après la livraison pour accompagner les premières applications."
+  - title: Stratégie de marque
+    content: >-
+      Positionnement, plateforme de marque, territoire verbal, persona. On pose
+      les fondations avant de dessiner.
+  - title: Naming
+    content: >-
+      Génération et sélection d'un nom mémorable, vérification de disponibilité,
+      déclinaisons.
+  - title: Identité visuelle
+    content: >-
+      Logotype, palette, typographie, motifs, iconographie. Un système cohérent
+      sur tous les supports.
+  - title: Guidelines
+    content: >-
+      Un brand book opérationnel que vos équipes et prestataires peuvent
+      appliquer sans vous appeler.
+  - title: Suivi & évolution
+    content: >-
+      On reste disponibles après la livraison pour accompagner les premières
+      applications.
 deliverables:
-  - "Logotype + variantes"
-  - "Charte graphique complète"
-  - "Brand book (PDF interactif)"
-  - "Fichiers sources vectoriels"
-  - "Kit de lancement réseaux"
-prevSlug: ""
-prevTitle: ""
-nextSlug: "web"
-nextTitle: "Web & interfaces"
-seoTitle: "Branding & Identité Visuelle — Advanguard Studio · Bruxelles"
-seoDescription: "Création d'identité de marque complète : naming, logotype, charte graphique, guidelines. Studio indépendant à Bruxelles. À partir de 3 500 € HT."
+  - Logotype + variantes
+  - Charte graphique complète
+  - Brand book (PDF interactif)
+  - Fichiers sources vectoriels
+  - Kit de lancement réseaux
+nextSlug: web
+nextTitle: Web & interfaces
+seoTitle: Branding & Identité Visuelle — Advanguard Studio · Bruxelles
+seoDescription: >-
+  Création d'identité de marque complète : naming, logotype, charte graphique,
+  guidelines. Studio indépendant à Bruxelles. À partir de 3 500 € HT.
