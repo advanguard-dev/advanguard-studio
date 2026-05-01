@@ -8,6 +8,13 @@ import keystaticConfig from '../../keystatic.config'
 const reader = createReader(process.cwd(), keystaticConfig)
 const services = await reader.collections.services.all()
 const formations = await reader.collections.formations.all()
+
+const formationVisuals = {
+  ia: { cls: 'v-ia', inner: '<span>MACHINE // LEARN</span>' },
+  branding: { cls: 'v-brand', inner: '' },
+  reseaux: { cls: 'v-soc', inner: '<div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>' },
+  projet: { cls: 'v-proj', inner: '<div class="bars"><i></i><i></i><i></i><i></i><i></i></div>' },
+}
 ---
 
 <Layout
@@ -89,17 +96,21 @@ const formations = await reader.collections.formations.all()
     </div>
 
     <div class="form-grid">
-      {formations.map((f) => (
-        <div class="form-card">
-          <div class="top"><span>{f.entry.displayNum}</span><span>{f.entry.badge}</span></div>
-          <h4>{f.entry.title} {f.entry.titleItalic && <em set:html={f.entry.titleItalic} />}</h4>
-          <p>{f.entry.lede}</p>
-          <a href={`/formations/${f.slug}`} class="mono"
-            style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;color:var(--orange)">
-            Voir le programme →
-          </a>
-        </div>
-      ))}
+      {formations.map((f) => {
+        const v = formationVisuals[f.slug]
+        return (
+          <div class="form-card">
+            <div class="top"><span>{f.entry.displayNum}</span><span>{f.entry.badge}</span></div>
+            {v && <div class={`visual ${v.cls}`} set:html={v.inner} />}
+            <h4>{f.entry.title} {f.entry.titleItalic && <em set:html={f.entry.titleItalic} />}</h4>
+            <p>{f.entry.lede}</p>
+            <a href={`/formations/${f.slug}`} class="mono"
+              style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;color:var(--orange)">
+              Voir le programme →
+            </a>
+          </div>
+        )
+      })}
     </div>
   </section>
 
