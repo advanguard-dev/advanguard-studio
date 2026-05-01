@@ -1,0 +1,44 @@
+---
+export const prerender = true
+import Layout from '../layouts/Layout.astro'
+import { createReader } from '@keystatic/core/reader'
+import keystaticConfig from '../../keystatic.config'
+
+const reader = createReader(process.cwd(), keystaticConfig)
+const projets = await reader.collections.projets.all()
+---
+
+<Layout
+  title="Projets — Advanguard Studio · Bruxelles"
+  description="Portfolio de projets Advanguard Studio — branding, web, illustrations, SaaS. Clients de toutes tailles, Belgium et worldwide."
+  canonical="https://advanguardstudio.com/projets"
+>
+  <div class="page-back" style="padding:10px 40px;font-size:12px;font-family:'JetBrains Mono',monospace;border-bottom:1px solid rgba(128,128,128,0.15);">
+    <a href="/" style="opacity:0.5;text-decoration:none;letter-spacing:0.08em;">← Accueil</a>
+  </div>
+
+  <section class="wrap">
+    <div class="hero-top">Projets — Advanguard Studio</div>
+    <h1>Ce qu'on a <em>construit.</em></h1>
+    <p class="lede">Une sélection de projets récents — identités, interfaces, formations. Chaque mission est différente, l'exigence reste la même.</p>
+
+    {projets.length === 0 ? (
+      <div style="padding:80px 0;text-align:center;color:var(--char)">
+        <p>Les projets arrivent bientôt — <a href="/contact">contactez-nous</a> pour en discuter.</p>
+      </div>
+    ) : (
+      <div class="work-grid">
+        {projets.map((p) => (
+          <div class="work-card">
+            <div class="work-meta">
+              <span class="work-year">{p.entry.year}</span>
+              <div class="tags">{p.entry.tags.map((t) => <span>{t}</span>)}</div>
+            </div>
+            <h3>{p.entry.title}</h3>
+            <p>{p.entry.description}</p>
+          </div>
+        ))}
+      </div>
+    )}
+  </section>
+</Layout>

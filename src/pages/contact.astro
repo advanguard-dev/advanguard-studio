@@ -1,0 +1,51 @@
+---
+export const prerender = true
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout
+  title="Contact — Advanguard Studio · Bruxelles"
+  description="Démarrez votre projet avec Advanguard Studio. Appel découverte, email ou WhatsApp — réponse sous 24h."
+  canonical="https://advanguardstudio.com/contact"
+>
+  <div class="page-back" style="padding:10px 40px;font-size:12px;font-family:'JetBrains Mono',monospace;border-bottom:1px solid rgba(128,128,128,0.15);">
+    <a href="/" style="opacity:0.5;text-decoration:none;letter-spacing:0.08em;">← Accueil</a>
+  </div>
+
+  <main class="wrap">
+    <div class="hero-top">Contact — Advanguard Studio</div>
+    <h1>On démarre<br><em>quand ?</em></h1>
+    <p class="lede">Pas de formulaire. Choisissez le moyen le plus simple — on vous répond sous 24 h.</p>
+
+    <div class="cta-list">
+      <a class="cta-item" href="#" data-cal-link="advanguard-studio-drcpag/discovery-call-30min" data-cal-namespace="discovery-call-30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+        <div class="cta-left">
+          <span class="cta-label">Réserver un appel de 30 min</span>
+          <span class="cta-sub">Disponibilités en temps réel · cal.com</span>
+        </div>
+        <span class="cta-arrow">→</span>
+      </a>
+      <a class="cta-item" href="mailto:hello@advanguardstudio.com">
+        <div class="cta-left">
+          <span class="cta-label">Envoyer un email</span>
+          <span class="cta-sub">hello@advanguardstudio.com</span>
+        </div>
+        <span class="cta-arrow">→</span>
+      </a>
+      <a class="cta-item" href="https://wa.me/32471375950" target="_blank" rel="noopener">
+        <div class="cta-left">
+          <span class="cta-label">WhatsApp</span>
+          <span class="cta-sub">+32 471 37 59 50 · Réponse rapide</span>
+        </div>
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Cal element-click embed -->
+  <script is:inline type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "discovery-call-30min", {origin:"https://app.cal.com"});
+    Cal.ns["discovery-call-30min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#BFFE2E"},"dark":{"cal-brand":"#BFFE2E"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+</Layout>

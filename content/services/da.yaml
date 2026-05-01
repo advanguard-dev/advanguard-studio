@@ -1,0 +1,32 @@
+displayNum: "A / 04"
+title: "Direction"
+titleItalic: "artistique"
+subtitle: "Des images qui font vendre."
+lede: "Shooting, production, retouche — on dirige et réalise vos assets visuels avec une exigence éditoriale. Du brief au fichier final livré."
+tags:
+  - Shooting
+  - Production
+  - Retouche
+  - Art direction
+metaTarif: "Sur devis — à partir de 1 200 € HT"
+metaDelai: "2 à 4 semaines"
+details:
+  - title: "Brief créatif"
+    content: "Mood board, références, directives lumière, casting si nécessaire. On arrive préparés."
+  - title: "Production"
+    content: "Direction de shooting photo ou vidéo. On gère le plateau, vous êtes libres."
+  - title: "Post-production"
+    content: "Sélection, retouche, colorimétrie, exports optimisés par format et plateforme."
+  - title: "Dérivés"
+    content: "Adaptation des visuels : stories, bannières pub, print, packaging."
+deliverables:
+  - "Fichiers haute résolution"
+  - "Exports réseaux sociaux"
+  - "Exports print si besoin"
+  - "Retouches incluses"
+prevSlug: "community"
+prevTitle: "Community management"
+nextSlug: "video"
+nextTitle: "Vidéo pour les réseaux"
+seoTitle: "Direction Artistique — Advanguard Studio · Bruxelles"
+seoDescription: "Direction artistique, shooting, production, retouche. Studio créatif à Bruxelles. À partir de 1 200 € HT."

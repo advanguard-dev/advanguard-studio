@@ -1,0 +1,33 @@
+displayNum: "A / 05"
+title: "Vidéo"
+titleItalic: "pour les réseaux"
+subtitle: "Du contenu qui retient l'attention."
+lede: "Reels, TikTok, motion design — on scénarise, tourne et monte des vidéos courtes qui captent l'attention et poussent à l'action. Format natif, ton authentique."
+tags:
+  - Reels
+  - TikTok
+  - Motion
+  - Script
+  - Montage
+metaTarif: "À partir de 500 € HT / vidéo"
+metaDelai: "1 à 2 semaines"
+details:
+  - title: "Script & storyboard"
+    content: "Concept, narration, CTA. On écrit des scripts pensés pour l'algorithme et pour l'humain."
+  - title: "Tournage"
+    content: "Sur site ou en studio. Direction de comédiens ou de fondateurs non habitués à la caméra."
+  - title: "Montage & motion"
+    content: "Montage dynamique, sous-titres, transitions, motion graphics légers. Prêt à publier."
+  - title: "Packs récurrents"
+    content: "Abonnement mensuel avec volume défini. Meilleur tarif, cohérence garantie."
+deliverables:
+  - "Fichier MP4 haute qualité"
+  - "Version story (9:16)"
+  - "Version feed (1:1)"
+  - "Sous-titres inclus"
+prevSlug: "da"
+prevTitle: "Direction artistique"
+nextSlug: "illustration"
+nextTitle: "Illustrations sur-mesure"
+seoTitle: "Vidéo pour les Réseaux — Advanguard Studio · Bruxelles"
+seoDescription: "Reels, TikTok, motion design pour les réseaux sociaux. Script, tournage, montage. Studio à Bruxelles. À partir de 500 € HT."

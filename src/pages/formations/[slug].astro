@@ -1,0 +1,76 @@
+---
+export const prerender = true
+
+import Layout from '../../layouts/Layout.astro'
+import { createReader } from '@keystatic/core/reader'
+import keystaticConfig from '../../../keystatic.config'
+
+export async function getStaticPaths() {
+  const reader = createReader(process.cwd(), keystaticConfig)
+  const formations = await reader.collections.formations.all()
+  return formations.map((f) => ({ params: { slug: f.slug } }))
+}
+
+const { slug } = Astro.params
+const reader = createReader(process.cwd(), keystaticConfig)
+const formation = await reader.collections.formations.read(slug)
+if (!formation) return Astro.redirect('/404')
+---
+
+<Layout
+  title={formation.seoTitle || `Formation ${formation.title} — Advanguard Studio`}
+  description={formation.seoDescription || formation.lede}
+  canonical={`https://advanguardstudio.com/formations/${slug}`}
+>
+  <div class="page-back" style="padding:10px 40px;font-size:12px;font-family:'JetBrains Mono',monospace;border-bottom:1px solid rgba(128,128,128,0.15);">
+    <a href="/#formations" style="opacity:0.5;text-decoration:none;letter-spacing:0.08em;">← Toutes les formations</a>
+  </div>
+
+  <section class="wrap hero">
+    <div class="hero-top">
+      <span class="num">{formation.displayNum}</span>
+      {formation.badge && <span class="badge">{formation.badge}</span>}
+    </div>
+    <h1>{formation.title} {formation.titleItalic && <em set:html={formation.titleItalic} />}</h1>
+    <p class="lede">{formation.lede}</p>
+    <div class="tags">
+      {formation.tags.map((t) => <span>{t}</span>)}
+    </div>
+  </section>
+
+  <div class="wrap body-grid">
+    <div>
+      {formation.programme.length > 0 && (
+        <>
+          <p class="section-label">Programme</p>
+          <div class="programme">
+            {formation.programme.map((p) => (
+              <div class="day">
+                <div class="day-num">{p.day}</div>
+                <p>{p.content}</p>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+      {formation.outcomes.length > 0 && (
+        <div class="outcomes">
+          <h2>Ce que vous <em>saurez faire</em></h2>
+          <ul>
+            {formation.outcomes.map((o) => <li>{o}</li>)}
+          </ul>
+        </div>
+      )}
+    </div>
+    <div>
+      <div class="meta-block">
+        {formation.metaFormat && <div class="meta-row"><span>Format</span><b>{formation.metaFormat}</b></div>}
+        {formation.metaGroupe && <div class="meta-row"><span>Groupe</span><b>{formation.metaGroupe}</b></div>}
+        {formation.metaLieu && <div class="meta-row"><span>Lieu</span><b>{formation.metaLieu}</b></div>}
+        {formation.metaTarif && <div class="meta-row"><span>Tarif</span><b>{formation.metaTarif}</b></div>}
+        {formation.metaOffre && <div class="meta-row"><span>Offre</span><b>{formation.metaOffre}</b></div>}
+      </div>
+      <a class="chip" href="/contact">Réserver une place →</a>
+    </div>
+  </div>
+</Layout>

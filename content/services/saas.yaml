@@ -1,0 +1,35 @@
+displayNum: "A / 07"
+title: "Produit"
+titleItalic: "SaaS"
+subtitle: "UX qui retient, design qui convertit."
+lede: "UX, UI, design system, prototypage et handoff — on intervient sur votre produit SaaS à n'importe quelle étape. De l'idée au design prêt à développer."
+tags:
+  - UX / UI
+  - Design system
+  - Prototypage
+  - Handoff
+metaTarif: "Sur devis — à partir de 4 000 € HT"
+metaDelai: "4 à 12 semaines"
+details:
+  - title: "Recherche utilisateur"
+    content: "Interviews, tests d'utilisabilité, analyse concurrentielle. On part des vrais problèmes."
+  - title: "Architecture & wireframes"
+    content: "Arborescence, flows utilisateurs, wireframes basse fidélité. La structure avant l'esthétique."
+  - title: "Design UI"
+    content: "Interface haute fidélité, design system Figma, dark mode, responsive, états d'interaction."
+  - title: "Prototypage"
+    content: "Prototype interactif pour tests et présentations investisseurs."
+  - title: "Handoff développeur"
+    content: "Annotations, tokens, specs détaillées. Votre équipe dev démarre sans questions."
+deliverables:
+  - "Fichier Figma complet"
+  - "Design system documenté"
+  - "Prototype interactif"
+  - "Specs développeur"
+  - "Guide des composants"
+prevSlug: "illustration"
+prevTitle: "Illustrations sur-mesure"
+nextSlug: "print"
+nextTitle: "Print on demand"
+seoTitle: "Design Produit SaaS — Advanguard Studio · Bruxelles"
+seoDescription: "UX/UI design, design system, prototypage et handoff pour produits SaaS. Studio design à Bruxelles. À partir de 4 000 € HT."

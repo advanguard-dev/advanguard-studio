@@ -1,0 +1,36 @@
+displayNum: "A / 02"
+title: "Web"
+titleItalic: "& interfaces"
+subtitle: "Des sites qui convertissent."
+lede: "Sites sur-mesure, Framer, Webflow ou Next.js — peu importe la stack, l'exigence reste la même : une interface rapide, belle et qui travaille pour vous. On couvre du prototype au go-live."
+tags:
+  - Sites sur-mesure
+  - Framer
+  - Webflow
+  - Next.js
+  - CMS
+metaTarif: "Sur devis — à partir de 2 500 € HT"
+metaDelai: "3 à 10 semaines"
+details:
+  - title: "Stratégie & architecture"
+    content: "Arborescence, wireframes, définition des parcours clés. On pense la structure avant de designer."
+  - title: "Design UI"
+    content: "Composants, design system, dark/light mode, animations. Chaque pixel a une raison d'être."
+  - title: "Développement"
+    content: "Intégration sur la stack choisie. Code propre, accessible, performant (Core Web Vitals)."
+  - title: "CMS & contenu"
+    content: "Keystatic, Sanity, Contentful — vous éditez votre contenu sans toucher au code."
+  - title: "Lancement & SEO"
+    content: "Deploy, configuration DNS, SEO on-page, GA4. Prêt à indexer dès le jour 1."
+deliverables:
+  - "Design Figma complet"
+  - "Site live + code source"
+  - "CMS configuré"
+  - "Documentation éditoriale"
+  - "Formation à l'administration"
+prevSlug: "branding"
+prevTitle: "Branding & identité"
+nextSlug: "community"
+nextTitle: "Community management"
+seoTitle: "Web & Interfaces — Advanguard Studio · Bruxelles"
+seoDescription: "Sites sur-mesure, Framer, Webflow, Next.js. Studio web indépendant à Bruxelles. Design, développement, CMS, SEO. À partir de 2 500 € HT."

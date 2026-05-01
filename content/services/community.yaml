@@ -1,0 +1,33 @@
+displayNum: "A / 03"
+title: "Community"
+titleItalic: "management"
+subtitle: "Une présence qui crée du lien."
+lede: "Stratégie éditoriale, calendrier de contenu, rédaction et publication — on gère votre présence sociale de A à Z ou on forme votre équipe pour qu'elle le fasse mieux."
+tags:
+  - Stratégie
+  - Calendrier
+  - Contenu
+  - Rédactionnel
+metaTarif: "À partir de 800 € HT / mois"
+metaDelai: "Démarrage sous 2 semaines"
+details:
+  - title: "Audit & stratégie"
+    content: "Analyse de l'existant, benchmark concurrentiel, définition des plateformes prioritaires et du tone of voice."
+  - title: "Calendrier éditorial"
+    content: "Planning mensuel, thématiques, formats natifs par plateforme. Zéro improvisation."
+  - title: "Production de contenu"
+    content: "Rédaction, direction artistique des visuels, brief photographique. Contenu cohérent avec votre identité."
+  - title: "Publication & suivi"
+    content: "Scheduling, interaction avec la communauté, reporting mensuel avec KPIs."
+deliverables:
+  - "Audit initial"
+  - "Stratégie éditoriale"
+  - "Calendrier mensuel"
+  - "Contenu publié"
+  - "Rapport mensuel"
+prevSlug: "web"
+prevTitle: "Web & interfaces"
+nextSlug: "da"
+nextTitle: "Direction artistique"
+seoTitle: "Community Management — Advanguard Studio · Bruxelles"
+seoDescription: "Stratégie éditoriale, calendrier de contenu, community management. Studio à Bruxelles. À partir de 800 € HT/mois."

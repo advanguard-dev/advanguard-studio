@@ -1,0 +1,32 @@
+displayNum: "A / 06"
+title: "Illustrations"
+titleItalic: "sur-mesure"
+subtitle: "Un style, une signature."
+lede: "Illustrations éditoriales, pictogrammes, spots, séries — on dessine dans votre univers ou on en crée un. Des assets uniques qui différencient votre communication."
+tags:
+  - Éditoriale
+  - Pictos
+  - Spot
+  - Séries
+metaTarif: "À partir de 300 € HT / illustration"
+metaDelai: "1 à 3 semaines"
+details:
+  - title: "Direction artistique"
+    content: "Définition du style, palette, références. On aligne le style illustration avec votre identité."
+  - title: "Production"
+    content: "Esquisses validées avant finalisation. Livraison en SVG + PNG haute résolution."
+  - title: "Séries & systèmes"
+    content: "Pictogrammes cohérents, séries d'illustrations pour blog, onboarding, packaging."
+  - title: "Adaptations"
+    content: "Déclinaisons couleur, versions print et web, exports animés si besoin."
+deliverables:
+  - "Fichiers SVG (vectoriels)"
+  - "PNG haute résolution"
+  - "Fichiers sources Illustrator"
+  - "Variations couleur"
+prevSlug: "video"
+prevTitle: "Vidéo pour les réseaux"
+nextSlug: "saas"
+nextTitle: "Produit SaaS"
+seoTitle: "Illustrations sur-mesure — Advanguard Studio · Bruxelles"
+seoDescription: "Illustrations éditoriales, pictogrammes, spots et séries sur-mesure. Studio illustration à Bruxelles. À partir de 300 € HT."

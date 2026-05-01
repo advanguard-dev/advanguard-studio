@@ -1,0 +1,87 @@
+---
+export const prerender = true
+
+import Layout from '../../layouts/Layout.astro'
+import { createReader } from '@keystatic/core/reader'
+import keystaticConfig from '../../../keystatic.config'
+
+export async function getStaticPaths() {
+  const reader = createReader(process.cwd(), keystaticConfig)
+  const services = await reader.collections.services.all()
+  return services.map((s) => ({ params: { slug: s.slug } }))
+}
+
+const { slug } = Astro.params
+const reader = createReader(process.cwd(), keystaticConfig)
+const service = await reader.collections.services.read(slug)
+if (!service) return Astro.redirect('/404')
+---
+
+<Layout
+  title={service.seoTitle || `${service.title} — Advanguard Studio`}
+  description={service.seoDescription || service.lede}
+  canonical={`https://advanguardstudio.com/services/${slug}`}
+>
+  <div class="page-back" style="padding:10px 40px;font-size:12px;font-family:'JetBrains Mono',monospace;border-bottom:1px solid rgba(128,128,128,0.15);">
+    <a href="/#services" style="opacity:0.5;text-decoration:none;letter-spacing:0.08em;">← Tous les services</a>
+  </div>
+
+  <section class="wrap hero">
+    <div class="hero-top">
+      <span class="num">{service.displayNum}</span>
+    </div>
+    <h1>{service.title} {service.titleItalic && <em set:html={service.titleItalic} />}</h1>
+    {service.subtitle && <p class="subtitle">{service.subtitle}</p>}
+    <p class="lede">{service.lede}</p>
+    <div class="tags">
+      {service.tags.map((t) => <span>{t}</span>)}
+    </div>
+  </section>
+
+  <div class="wrap body-grid">
+    <div>
+      {service.details.length > 0 && (
+        <>
+          <p class="section-label">Ce qu'on fait</p>
+          <div class="details">
+            {service.details.map((d) => (
+              <div class="detail-row">
+                <h4>{d.title}</h4>
+                <p>{d.content}</p>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+      {service.deliverables.length > 0 && (
+        <div class="deliverables">
+          <h3>Livrables <em>types</em></h3>
+          <ul>
+            {service.deliverables.map((d) => <li>{d}</li>)}
+          </ul>
+        </div>
+      )}
+    </div>
+    <div class="sidebar">
+      <div class="meta-block">
+        {service.metaTarif && <div class="meta-row"><span>Tarif</span><b>{service.metaTarif}</b></div>}
+        {service.metaDelai && <div class="meta-row"><span>Délai</span><b>{service.metaDelai}</b></div>}
+      </div>
+      <a class="chip" href="/contact">Démarrer un projet →</a>
+      <a class="chip-outline" href="/#services">Voir tous les services</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="srv-nav">
+      {service.prevSlug
+        ? <a href={`/services/${service.prevSlug}`}><span class="dir">← Précédent</span><span class="srv-title">{service.prevTitle}</span></a>
+        : <span></span>
+      }
+      {service.nextSlug
+        ? <a href={`/services/${service.nextSlug}`}><span class="dir">Suivant →</span><span class="srv-title">{service.nextTitle}</span></a>
+        : <span></span>
+      }
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,31 @@
+displayNum: "F / 01"
+title: "Intelligence artificielle"
+titleItalic: "en studio"
+badge: "Certifiante"
+lede: "Maîtrisez les outils IA qui redéfinissent le métier — des LLMs aux APIs, des interfaces no-code aux intégrations sur-mesure. Trois jours pour passer de curieux à opérationnel."
+tags:
+  - Gemini
+  - Claude
+  - Google AI Studio
+  - Antigravity
+  - API
+  - SaaS IA
+programme:
+  - day: "J1"
+    content: "Panorama des LLMs : Gemini vs Claude, forces et limites de chacun. Prise en main de Google AI Studio et Antigravity. Ateliers pratiques de prompting avancé."
+  - day: "J2"
+    content: "Intégration API : connecter un LLM à vos outils existants. Automatisations, workflows hybrides, création d'un premier pipeline de A à Z."
+  - day: "J3"
+    content: "Projet réel : chaque participant conçoit et déploie un mini-SaaS IA adapté à son activité. Protocole d'intégration sur-mesure."
+outcomes:
+  - "Choisir et configurer le bon modèle selon votre cas d'usage (Gemini, Claude)"
+  - "Utiliser Google AI Studio et Antigravity sans friction"
+  - "Connecter une API IA à vos outils et automatiser vos flux"
+  - "Construire un SaaS IA simple sans équipe technique"
+metaFormat: "3 jours × 6h"
+metaGroupe: "1 à 10 personnes"
+metaLieu: "Visio ou intra-entreprise"
+metaTarif: "2 500 € HT (forfait groupe)"
+metaOffre: "−50 € par personne supplémentaire"
+seoTitle: "Formation IA en Studio — Gemini, Claude, API · Advanguard Studio"
+seoDescription: "Formation intensive 3 jours pour maîtriser l'IA dans votre workflow créatif. Gemini, Claude, Google AI Studio, API, SaaS IA. Visio ou intra-entreprise. 2 500 € HT."

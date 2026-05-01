@@ -1,0 +1,21 @@
+{
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/consulting.html", "destination": "/consulting", "permanent": true },
+    { "source": "/processus.html", "destination": "/processus", "permanent": true },
+    { "source": "/projets.html", "destination": "/projets", "permanent": true },
+    { "source": "/service-branding.html", "destination": "/services/branding", "permanent": true },
+    { "source": "/service-web.html", "destination": "/services/web", "permanent": true },
+    { "source": "/service-community.html", "destination": "/services/community", "permanent": true },
+    { "source": "/service-da.html", "destination": "/services/da", "permanent": true },
+    { "source": "/service-video.html", "destination": "/services/video", "permanent": true },
+    { "source": "/service-illustration.html", "destination": "/services/illustration", "permanent": true },
+    { "source": "/service-saas.html", "destination": "/services/saas", "permanent": true },
+    { "source": "/service-print.html", "destination": "/services/print", "permanent": true },
+    { "source": "/formation-ia.html", "destination": "/formations/ia", "permanent": true },
+    { "source": "/formation-branding.html", "destination": "/formations/branding", "permanent": true },
+    { "source": "/formation-reseaux.html", "destination": "/formations/reseaux", "permanent": true },
+    { "source": "/formation-projet.html", "destination": "/formations/projet", "permanent": true }
+  ]
+}

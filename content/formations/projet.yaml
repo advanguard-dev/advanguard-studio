@@ -1,0 +1,28 @@
+displayNum: "F / 04"
+title: "Gestion"
+titleItalic: "de projet"
+badge: "Pro"
+lede: "Méthodes, rituels, outils — deux jours pour structurer votre façon de travailler, que vous soyez indépendant, en studio ou en équipe. Notion, Linear, Figma comme terrain de jeu."
+tags:
+  - Notion
+  - Linear
+  - Figma
+  - Méthodes agiles
+  - Rituels d'équipe
+programme:
+  - day: "J1"
+    content: "Fondamentaux : cycles de projet, briefs, devis, jalons. Mise en place d'un espace Notion de gestion. Rituels hebdomadaires."
+  - day: "J2"
+    content: "Outils avancés : Linear pour le suivi de tasks, Figma pour la collaboration async, templates réutilisables. Simulation de projet réel."
+outcomes:
+  - "Structurer et piloter un projet créatif de A à Z"
+  - "Utiliser Notion, Linear et Figma en collaboration"
+  - "Définir des rituels d'équipe efficaces"
+  - "Produire des briefs et des devis clairs"
+metaFormat: "2 jours × 6h"
+metaGroupe: "2 à 12 personnes"
+metaLieu: "Présentiel (Bruxelles) ou intra"
+metaTarif: "1 500 € HT (forfait groupe)"
+metaOffre: ""
+seoTitle: "Formation Gestion de Projet Créatif — Notion, Linear, Figma · Advanguard"
+seoDescription: "Formation gestion de projet 2 jours pour indépendants et studios. Notion, Linear, Figma. Bruxelles ou intra-entreprise. 1 500 € HT."
