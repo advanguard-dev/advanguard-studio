@@ -48,7 +48,7 @@
     .wrap {
       max-width: 1480px;
       margin: 0 auto;
-      padding: 0 28px
+      padding: 0 max(28px, env(safe-area-inset-right)) 0 max(28px, env(safe-area-inset-left))
     }
 
     .rule {
@@ -176,16 +176,21 @@
       display: none;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       gap: 5px;
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 4px;
+      padding: 8px;
       border-radius: 6px;
       transition: background .2s
     }
+    .burger:focus-visible,
+    .pill:focus-visible,
+    .cta-item:focus-visible,
+    .srv-row:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px }
     .burger:hover { background: none }
     .burger span {
       display: block;
@@ -1607,4 +1612,11 @@
     }
 @media(min-width:901px){.mob-menu{display:none !important;}}
 
-@media(min-width:901px){.mob-menu{display:none !important;}}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

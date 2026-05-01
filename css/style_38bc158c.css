@@ -160,3 +160,21 @@
 @media(max-width:600px){.nav-cta .pill.filled:not(.mob-cta){display:none}}
 
 @media(min-width:901px){.mob-menu{display:none !important;}}
+
+/* ==== UX patches: a11y, touch targets, motion, safe-area ==== */
+.burger { width: 44px !important; height: 44px !important; padding: 8px !important; align-items: center }
+.burger:focus-visible,
+.pill:focus-visible,
+.cta-item:focus-visible,
+.srv-row:focus-visible { outline: 2px solid var(--orange, #BFFE2E); outline-offset: 2px }
+@supports (padding: max(0px)) {
+  .wrap { padding-left: max(28px, env(safe-area-inset-left)); padding-right: max(28px, env(safe-area-inset-right)) }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
