@@ -115,7 +115,7 @@ const formationVisuals = {
   </section>
 
   <!-- CTA -->
-  <section class="cta wrap">
+  <section class="cta wrap" id="ctaSection">
     <div class="cta-inner">
       <h2>Prêt à démarrer <em>votre projet ?</em></h2>
       <p>Un appel de 30 min suffit pour savoir si on peut travailler ensemble.</p>
@@ -125,6 +125,9 @@ const formationVisuals = {
       </div>
     </div>
   </section>
+
+  <!-- custom cursor OUI! — desktop only -->
+  <div id="ctaCursor" aria-hidden="true">OUI&nbsp;!</div>
 </Layout>
 
 <script is:inline>
@@ -137,5 +140,27 @@ const formationVisuals = {
   }
   tick();
   setInterval(tick, 1000);
+})();
+
+// CTA custom cursor — desktop (fine pointer) only
+(function(){
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+  var cursor = document.getElementById('ctaCursor');
+  var section = document.getElementById('ctaSection');
+  if (!cursor || !section) return;
+  var active = false;
+  document.addEventListener('mousemove', function(e) {
+    if (!active) return;
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top  = e.clientY + 'px';
+  });
+  section.addEventListener('mouseenter', function() {
+    active = true;
+    cursor.classList.add('visible');
+  });
+  section.addEventListener('mouseleave', function() {
+    active = false;
+    cursor.classList.remove('visible');
+  });
 })();
 </script>

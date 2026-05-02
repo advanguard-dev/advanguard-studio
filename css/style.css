@@ -1424,6 +1424,39 @@
       flex-wrap: wrap
     }
 
+    /* ============ CTA CUSTOM CURSOR ============ */
+    #ctaCursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 8000;
+      transform: translate(-50%, -50%);
+      background: var(--orange);
+      color: var(--bone);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 999px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s, visibility .2s;
+      box-shadow: 0 4px 20px rgba(191,254,46,.35)
+    }
+
+    #ctaCursor.visible {
+      opacity: 1;
+      visibility: visible
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      #ctaSection { cursor: none }
+    }
+
     /* ============ FOOTER ============ */
     footer {
       padding: 80px 28px 40px;
