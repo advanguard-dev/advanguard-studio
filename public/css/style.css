@@ -1453,8 +1453,11 @@
       visibility: visible
     }
 
+    /* CTA section clickable — hide buttons on desktop, show on mobile */
+    @media (min-width: 901px) { .cta-row { display: none } }
+    #ctaSection { cursor: pointer } /* touch / coarse pointer fallback */
     @media (hover: hover) and (pointer: fine) {
-      #ctaSection { cursor: none }
+      #ctaSection { cursor: none } /* OUI! cursor takes over on desktop */
     }
 
     /* ============ FOOTER ============ */

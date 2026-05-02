@@ -237,7 +237,7 @@ export default function Search({ items }: Props) {
       </button>
 
       {open && (
-        <div style={S.overlay} onClick={close} role="dialog" aria-modal="true" aria-label="Recherche">
+        <div style={S.overlay} onClick={close} onTouchEnd={close} role="dialog" aria-modal="true" aria-label="Recherche">
           <div style={S.modal} onClick={(e) => e.stopPropagation()}>
             <input
               ref={inputRef}

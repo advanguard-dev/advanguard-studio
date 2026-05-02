@@ -120,8 +120,7 @@ const formationVisuals = {
       <h2>Prêt à démarrer <em>votre projet ?</em></h2>
       <p>Un appel de 30 min suffit pour savoir si on peut travailler ensemble.</p>
       <div class="cta-row">
-        <a href="/contact" class="pill filled" data-umami-event="cta_hero_contact">Démarrer un projet →</a>
-        <a href="/processus" class="pill" data-umami-event="cta_hero_processus">Notre processus</a>
+        <a href="https://cal.com/advanguard-studio-drcpag/discovery-call-30min" target="_blank" rel="noopener" class="pill filled cta-mobile-btn" data-umami-event="cta_hero_contact">Démarrer un projet →</a>
       </div>
     </div>
   </section>
@@ -140,6 +139,17 @@ const formationVisuals = {
   }
   tick();
   setInterval(tick, 1000);
+})();
+
+// CTA section — entire section navigates to cal.com on click
+(function(){
+  var CAL_URL = 'https://cal.com/advanguard-studio-drcpag/discovery-call-30min';
+  var section = document.getElementById('ctaSection');
+  if (!section) return;
+  section.addEventListener('click', function(e) {
+    if (e.target.closest('a,button')) return;
+    window.open(CAL_URL, '_blank', 'noopener');
+  });
 })();
 
 // CTA custom cursor — desktop (fine pointer) only
