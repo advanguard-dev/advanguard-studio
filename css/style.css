@@ -1668,3 +1668,21 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ===== Cross-page cascade fixes ===== */
+.projets-wrap { padding-top: 80px; padding-bottom: 48px }
+@media (max-width: 700px) {
+  .projets-wrap { padding-top: 48px; padding-bottom: 32px }
+}
+.hero-top:has(.num),
+.hero-top:has(.badge) {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  color: inherit;
+}
