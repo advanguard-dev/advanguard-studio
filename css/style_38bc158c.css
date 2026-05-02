@@ -38,7 +38,7 @@
 
   /* STATS */
   .stats{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--rule)}
-  .stat{flex:1 1 200px;padding:24px 28px 24px 0;border-right:1px solid var(--rule)}
+  .stat{flex:1 1 200px;padding:36px 28px 36px 0;border-right:1px solid var(--rule)}
   .stat:last-child{border-right:none}
   .stat-val{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--orange);letter-spacing:.05em;margin-bottom:6px}
   .stat-desc{font-size:12px;color:var(--char);line-height:1.4}

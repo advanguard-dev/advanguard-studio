@@ -11,7 +11,7 @@
   .back:hover{color:var(--ink)}
 
     body{display:flex;flex-direction:column;min-height:100vh}
-    main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:80px 80px;max-width:960px;width:100%;margin-left:auto;margin-right:auto;align-self:center}
+    main.wrap{flex:1;display:flex;flex-direction:column;justify-content:center;padding:80px 40px;max-width:960px;width:100%;margin-left:auto;margin-right:auto;align-self:center}
     .hero-top{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--char);margin-bottom:28px}
     h1{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(48px,7vw,100px);line-height:.92;letter-spacing:-.03em;margin-bottom:20px}
     h1 em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--orange)}
@@ -29,7 +29,7 @@
 @media(max-width:768px){
   .wrap{padding:0 20px}
   .nav-inner{padding:14px 20px}
-  main{padding:48px 20px}
+  main.wrap{padding:48px 20px}
   .cta-item{padding:20px 16px}
   .cta-label{font-size:18px}
 }
