@@ -1334,11 +1334,10 @@
 
     .cta {
       margin-top: 80px;
-      padding: 100px 28px;
+      padding: 100px max(28px, env(safe-area-inset-right)) 100px max(28px, env(safe-area-inset-left));
       background: var(--paper);
       color: var(--ink);
       text-align: center;
-      border-radius: 4px;
       position: relative;
       overflow: hidden
     }
