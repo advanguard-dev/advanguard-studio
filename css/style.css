@@ -1333,7 +1333,7 @@
     }
 
     .cta {
-      margin: 80px 0 0;
+      margin-top: 80px;
       padding: 100px 28px;
       background: var(--paper);
       color: var(--ink);
