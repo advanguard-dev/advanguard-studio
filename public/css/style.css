@@ -1357,13 +1357,22 @@
       animation: ctaGlow 6s ease-in-out infinite
     }
 
+    .cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center
+    }
+
     .cta h2 {
       position: relative;
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 500;
-      font-size: clamp(64px, 11vw, 180px);
-      line-height: .88;
-      letter-spacing: -.04em
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -.03em
     }
 
     .cta h2 em {
