@@ -25,3 +25,10 @@ pnpm-debug.log*
 
 # Vercel build output
 .vercel/
+
+# Claude Code / agent internals
+.claude/
+.agents/
+AGENTS.md
+skills/
+skills-lock.json

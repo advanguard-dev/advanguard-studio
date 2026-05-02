@@ -1,10 +1,16 @@
 ---
+import Search from '../components/Search.tsx'
+import type { SearchItem } from '../components/Search.tsx'
+import { createReader } from '@keystatic/core/reader'
+import keystaticConfig from '../../keystatic.config'
+
 interface Props {
   title: string
   description?: string
   ogTitle?: string
   ogDescription?: string
   canonical?: string
+  jsonLd?: object[]
 }
 
 const {
@@ -13,26 +19,71 @@ const {
   ogTitle,
   ogDescription,
   canonical,
+  jsonLd = [],
 } = Astro.props
+
+const reader = createReader(process.cwd(), keystaticConfig)
+const [services, formations] = await Promise.all([
+  reader.collections.services.all(),
+  reader.collections.formations.all(),
+])
+
+const searchItems: SearchItem[] = [
+  ...services.map((s) => ({
+    type: 'service' as const,
+    title: `${s.entry.title}${s.entry.titleItalic ? ' ' + s.entry.titleItalic.replace(/<[^>]*>/g, '') : ''}`,
+    slug: s.slug,
+    tags: s.entry.tags,
+    description: s.entry.lede,
+  })),
+  ...formations.map((f) => ({
+    type: 'formation' as const,
+    title: `${f.entry.title}${f.entry.titleItalic ? ' ' + f.entry.titleItalic.replace(/<[^>]*>/g, '') : ''}`,
+    slug: f.slug,
+    tags: f.entry.tags,
+    description: f.entry.lede,
+  })),
+]
+
+const pageUrl = canonical ?? Astro.url.href
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['Organization', 'ProfessionalService'],
+  name: 'Advanguard Studio',
+  alternateName: ['AdVanguard', 'Advanguard'],
+  url: 'https://advanguardstudio.com',
+  logo: 'https://advanguardstudio.com/logo.svg',
+  email: 'hello@advanguardstudio.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Brussels',
+    addressCountry: 'BE',
+  },
+  areaServed: 'Worldwide',
+  knowsLanguage: ['fr', 'en'],
+  sameAs: [],
+}
+
+const allSchemas = [organizationSchema, ...jsonLd]
 ---
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-86EMGPKE74"></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-86EMGPKE74');
-  </script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Umami Analytics — cookieless, RGPD compliant -->
+  <!-- TODO: replace YOUR_UMAMI_ID once account confirmed -->
+  <!-- <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_UMAMI_ID"></script> -->
+
+  <!-- Fonts — non-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
+
   <link rel="stylesheet" href="/css/style.css">
 
   <title>{title}</title>
@@ -40,24 +91,33 @@ const {
   <meta name="robots" content="index, follow">
   <meta name="author" content="Advanguard Studio">
 
+  <meta property="og:site_name" content="Advanguard Studio">
   <meta property="og:title" content={ogTitle ?? title}>
   <meta property="og:description" content={ogDescription ?? description}>
   <meta property="og:type" content="website">
-  {canonical && <meta property="og:url" content={canonical}>}
+  <meta property="og:url" content={pageUrl}>
   <meta property="og:locale" content="fr_BE">
   <meta property="og:image" content="https://advanguardstudio.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Advanguard Studio — Branding, Web & Formations IA · Bruxelles">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://advanguardstudio.com/og-image.png">
   <meta name="twitter:title" content={ogTitle ?? title}>
   <meta name="twitter:description" content={ogDescription ?? description}>
+
+  {canonical && <link rel="canonical" href={canonical}>}
+
+  <!-- JSON-LD Structured Data -->
+  {allSchemas.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="brand"><img src="/logo.svg" alt="Advanguard" style="height:28px;display:block;" decoding="async"></a>
+    <a href="/" class="brand"><img src="/logo.svg" alt="Advanguard Studio" width="120" height="28" style="height:28px;width:auto;display:block;" decoding="async"></a>
     <div class="nav-links">
       <a href="/#services">Services</a>
       <a href="/#formations">Formations</a>
@@ -67,7 +127,8 @@ const {
       <a href="/contact">Contact</a>
     </div>
     <div class="nav-cta">
-      <a href="/contact" class="pill filled">Démarrer un projet →</a>
+      <Search items={searchItems} client:idle />
+      <a href="/contact" class="pill filled" data-umami-event="cta_nav_contact">Démarrer un projet →</a>
       <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -85,7 +146,7 @@ const {
       <a href="/projets" class="mob-link">Projets</a>
       <a href="/contact" class="mob-link">Contact</a>
     </nav>
-    <a href="/contact" class="pill filled mob-cta">Démarrer un projet →</a>
+    <a href="/contact" class="pill filled mob-cta" data-umami-event="cta_mob_contact">Démarrer un projet →</a>
   </div>
 </div>
 
@@ -94,7 +155,7 @@ const {
 <footer class="wrap site-footer">
   <div class="f-top">
     <div>
-      <div class="brand-big"><img src="/logo.svg" alt="Advanguard" style="height: 1em; width: auto;" decoding="async"></div>
+      <div class="brand-big"><img src="/logo.svg" alt="Advanguard Studio" width="120" height="28" style="height: 1em; width: auto;" decoding="async" loading="lazy"></div>
       <p style="max-width:44ch;margin-top:20px;font-size:14px;line-height:1.5;color:var(--char)">Studio de design indépendant — branding, web, produit, formations, consulting. Belgium, worldwide.</p>
     </div>
     <div>
@@ -117,7 +178,7 @@ const {
       <h6>Contact</h6>
       <ul>
         <li><a href="mailto:hello@advanguardstudio.com" style="text-decoration:none;color:inherit;">hello@advanguardstudio.com</a></li>
-        <li><a href="/contact" style="text-decoration:none;color:inherit;">Prendre un appel →</a></li>
+        <li><a href="/contact" style="text-decoration:none;color:inherit;" data-umami-event="cta_footer_contact">Prendre un appel →</a></li>
       </ul>
     </div>
   </div>

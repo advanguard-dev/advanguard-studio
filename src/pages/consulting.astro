@@ -12,16 +12,26 @@ import Layout from '../layouts/Layout.astro'
     <a href="/" style="opacity:0.5;text-decoration:none;letter-spacing:0.08em;">← Retour</a>
   </div>
 
-  <section class="wrap hero">
+  <section class="wrap hero consulting-hero">
     <div class="hero-top mono">(Ch. 04) — Consulting</div>
     <h1>Audit, analyse,<br><em>recommandations.</em></h1>
     <p class="lede">Un regard extérieur, sans complaisance. On arrive, on écoute, on dissèque — vous repartez avec un diagnostic précis, des recommandations priorisées et un plan d'action que vos équipes peuvent exécuter dès lundi.</p>
+    <ul class="consulting-meta-line" aria-label="Informations clés">
+      <li><b>5</b> formats d'audit</li>
+      <li><b>10&nbsp;jours</b> de restitution cible</li>
+      <li><b>90&nbsp;jours</b> de plan d'action</li>
+    </ul>
+    <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="/contact" class="pill filled" data-umami-event="cta_consulting_hero">Demander un devis →</a>
+      <a href="/contact" class="pill" data-umami-event="cta_consulting_call">Prendre un appel de 30 min</a>
+    </div>
   </section>
 
   <div class="wrap body-grid">
     <div>
       <div class="offers">
         <div class="offer-row">
+          <div class="offer-num">01</div>
           <div>
             <h3>Audit de <em>marque</em></h3>
             <p>Analyse complète de votre identité visuelle, verbale et positionnement concurrentiel. On évalue la cohérence, la différenciation et l'adéquation avec vos cibles. Livraison d'un rapport de 40 à 60 pages avec recommandations priorisées.</p>
@@ -29,6 +39,7 @@ import Layout from '../layouts/Layout.astro'
           <div class="dur">5 jours</div>
         </div>
         <div class="offer-row">
+          <div class="offer-num">02</div>
           <div>
             <h3>Analyse marketing <em>&</em> positionnement</h3>
             <p>Cartographie de votre marché, analyse des perceptions, identification des angles différenciants. Idéal avant un lancement ou un repositionnement.</p>
@@ -36,6 +47,7 @@ import Layout from '../layouts/Layout.astro'
           <div class="dur">3 jours</div>
         </div>
         <div class="offer-row">
+          <div class="offer-num">03</div>
           <div>
             <h3>Recherche <em>concurrentielle</em></h3>
             <p>Benchmark approfondi de 5 à 10 acteurs de votre secteur. Analyse visuelle, verbale, UX et éditoriale. Identification des espaces libres à occuper.</p>
@@ -43,6 +55,7 @@ import Layout from '../layouts/Layout.astro'
           <div class="dur">2 jours</div>
         </div>
         <div class="offer-row">
+          <div class="offer-num">04</div>
           <div>
             <h3>Atelier direction <em>créative</em></h3>
             <p>Une journée en immersion avec vos équipes pour aligner la vision créative, définir les territoires visuels et poser les bases d'un brief opérationnel.</p>
@@ -50,6 +63,7 @@ import Layout from '../layouts/Layout.astro'
           <div class="dur">1 jour</div>
         </div>
         <div class="offer-row">
+          <div class="offer-num">05</div>
           <div>
             <h3>Plan de déploiement <em>90 jours</em></h3>
             <p>Suite logique de l'audit : un plan d'action séquencé, priorisé et budgété pour mettre en œuvre les recommandations avec vos ressources internes ou en nous confiant l'exécution.</p>
@@ -74,6 +88,10 @@ import Layout from '../layouts/Layout.astro'
         <div class="meta-row"><span>Tarif</span><b>À partir de 1 800 € HT</b></div>
       </div>
       <a class="chip" href="/contact">Demander un devis →</a>
+      <div class="consulting-sidebar-note">
+        <span>Conseil</span>
+        <p>Si votre marque fonctionne "à peu près", l'audit sert à comprendre précisément ce qui freine : perception, clarté, cohérence, offre ou exécution.</p>
+      </div>
       <div class="livrables">
         <h3>Livrables <em>types</em></h3>
         <ul>

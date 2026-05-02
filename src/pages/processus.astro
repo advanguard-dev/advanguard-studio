@@ -1,12 +1,45 @@
 ---
 export const prerender = true
 import Layout from '../layouts/Layout.astro'
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Combien de temps dure un projet en moyenne ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Entre 3 et 6 semaines selon la complexité. Un rebrand complet : 6 semaines. Un site web seul : 3 à 4 semaines. On vous donne un calendrier précis au brief.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Peut-on modifier le périmètre en cours de route ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui, mais en toute transparence. Tout ajout de périmètre fait l\'objet d\'un avenant signé. On ne facture jamais une surprise.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Travaillez-vous avec des sous-traitants ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Parfois, sur des productions spécifiques (développement complexe, motion, photo). Toujours des profils sélectionnés par nos soins, sous notre responsabilité.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quel est votre délai de réponse à un brief ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Moins de 48h. Si le projet nous correspond, on vous envoie une proposition de cadrage dans la foulée.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Que se passe-t-il si le résultat ne nous convient pas ?',
+      acceptedAnswer: { '@type': 'Answer', text: 'On a 2 rounds de révisions inclus pour affiner. Si après ça on est vraiment bloqués — ce qui ne nous est pas arrivé — on tranche ensemble en session de travail.' },
+    },
+  ],
+}
 ---
 
 <Layout
   title="Processus — Méthode Advanguard Studio · Bruxelles"
   description="La méthode Advanguard Studio : 5 phases du brief au livrable. Brief, recherche, exploration, construction, livraison. 12 à 28 jours."
   canonical="https://advanguardstudio.com/processus"
+  jsonLd={[faqSchema]}
 >
   <div class="page-back" style="padding:10px 40px;font-size:12px;font-family:'JetBrains Mono',monospace;border-bottom:1px solid rgba(128,128,128,0.15);">
     <a href="/" style="opacity:0.5;text-decoration:none;letter-spacing:0.08em;">← Retour</a>
@@ -30,6 +63,9 @@ import Layout from '../layouts/Layout.astro'
           <div class="stat-val">&lt; 48h</div>
           <div class="stat-desc">Premier retour garanti</div>
         </div>
+      </div>
+      <div style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="/contact" class="pill filled" data-umami-event="cta_processus_hero">Démarrer un projet →</a>
       </div>
     </div>
   </section>

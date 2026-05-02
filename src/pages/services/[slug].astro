@@ -15,12 +15,39 @@ const { slug } = Astro.params
 const reader = createReader(process.cwd(), keystaticConfig)
 const service = await reader.collections.services.read(slug)
 if (!service) return Astro.redirect('/404')
+
+const pageUrl = `https://advanguardstudio.com/services/${slug}`
+const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '')
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `${service.title}${service.titleItalic ? ' ' + stripHtml(service.titleItalic) : ''}`,
+  description: service.seoDescription || service.lede,
+  url: pageUrl,
+  provider: {
+    '@type': 'Organization',
+    name: 'Advanguard Studio',
+    url: 'https://advanguardstudio.com',
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://advanguardstudio.com' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://advanguardstudio.com/#services' },
+    { '@type': 'ListItem', position: 3, name: service.title, item: pageUrl },
+  ],
+}
 ---
 
 <Layout
   title={service.seoTitle || `${service.title} — Advanguard Studio`}
   description={service.seoDescription || service.lede}
-  canonical={`https://advanguardstudio.com/services/${slug}`}
+  canonical={pageUrl}
+  jsonLd={[serviceSchema, breadcrumbSchema]}
 >
   <div class="page-back" style="padding:10px 40px;font-size:12px;font-family:'JetBrains Mono',monospace;border-bottom:1px solid rgba(128,128,128,0.15);">
     <a href="/#services" style="opacity:0.5;text-decoration:none;letter-spacing:0.08em;">← Tous les services</a>

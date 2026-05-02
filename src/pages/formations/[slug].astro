@@ -2,6 +2,7 @@
 export const prerender = true
 
 import Layout from '../../layouts/Layout.astro'
+import BookingWidget from '../../components/BookingWidget.tsx'
 import { createReader } from '@keystatic/core/reader'
 import keystaticConfig from '../../../keystatic.config'
 
@@ -15,12 +16,39 @@ const { slug } = Astro.params
 const reader = createReader(process.cwd(), keystaticConfig)
 const formation = await reader.collections.formations.read(slug)
 if (!formation) return Astro.redirect('/404')
+
+const pageUrl = `https://advanguardstudio.com/formations/${slug}`
+const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '')
+
+const courseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: `${formation.title}${formation.titleItalic ? ' ' + stripHtml(formation.titleItalic) : ''}`,
+  description: formation.seoDescription || formation.lede,
+  url: pageUrl,
+  provider: {
+    '@type': 'Organization',
+    name: 'Advanguard Studio',
+    url: 'https://advanguardstudio.com',
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://advanguardstudio.com' },
+    { '@type': 'ListItem', position: 2, name: 'Formations', item: 'https://advanguardstudio.com/#formations' },
+    { '@type': 'ListItem', position: 3, name: formation.title, item: pageUrl },
+  ],
+}
 ---
 
 <Layout
   title={formation.seoTitle || `Formation ${formation.title} — Advanguard Studio`}
   description={formation.seoDescription || formation.lede}
-  canonical={`https://advanguardstudio.com/formations/${slug}`}
+  canonical={pageUrl}
+  jsonLd={[courseSchema, breadcrumbSchema]}
 >
   <div class="page-back" style="padding:10px 40px;font-size:12px;font-family:'JetBrains Mono',monospace;border-bottom:1px solid rgba(128,128,128,0.15);">
     <a href="/#formations" style="opacity:0.5;text-decoration:none;letter-spacing:0.08em;">← Toutes les formations</a>
@@ -70,7 +98,16 @@ if (!formation) return Astro.redirect('/404')
         {formation.metaTarif && <div class="meta-row"><span>Tarif</span><b>{formation.metaTarif}</b></div>}
         {formation.metaOffre && <div class="meta-row"><span>Offre</span><b>{formation.metaOffre}</b></div>}
       </div>
-      <a class="chip" href="/contact">Réserver une place →</a>
+      <a class="chip" href="/contact" data-umami-event="cta_formation_contact">Réserver une place →</a>
     </div>
   </div>
+
+  <!-- Cal.com Booking Widget -->
+  <section class="wrap" style="margin-top:60px;">
+    <div class="section-head">
+      <div class="k">Réserver</div>
+      <h2>Choisissez <em>votre créneau.</em></h2>
+    </div>
+    <BookingWidget calLink="advanguard-studio-drcpag/organiser-une-formation" client:idle />
+  </section>
 </Layout>

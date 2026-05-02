@@ -1,0 +1,125 @@
+---
+export const prerender = true
+
+import Layout from '../../layouts/Layout.astro'
+import { niches, getNicheBySlug } from '../../data/niches'
+
+export function getStaticPaths() {
+  return niches.map((n) => ({ params: { slug: n.slug } }))
+}
+
+const { slug } = Astro.params
+const niche = getNicheBySlug(slug)
+if (!niche) return Astro.redirect('/404')
+
+const pageUrl = `https://advanguardstudio.com/agence/${slug}`
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `${niche.headline} ${niche.headlineEm}`,
+  description: niche.seoDescription,
+  url: pageUrl,
+  provider: {
+    '@type': 'Organization',
+    name: 'Advanguard Studio',
+    url: 'https://advanguardstudio.com',
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://advanguardstudio.com' },
+    { '@type': 'ListItem', position: 2, name: 'Agence', item: 'https://advanguardstudio.com/agence' },
+    { '@type': 'ListItem', position: 3, name: `${niche.headline} ${niche.headlineEm}`, item: pageUrl },
+  ],
+}
+---
+
+<Layout
+  title={niche.seoTitle}
+  description={niche.seoDescription}
+  canonical={pageUrl}
+  jsonLd={[serviceSchema, breadcrumbSchema]}
+>
+  <div class="page-back" style="padding:10px 40px;font-size:12px;font-family:'JetBrains Mono',monospace;border-bottom:1px solid rgba(128,128,128,0.15);">
+    <a href="/" style="opacity:0.5;text-decoration:none;letter-spacing:0.08em;">← Accueil</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="wrap hero" style="padding-top:80px;padding-bottom:60px;">
+    <div class="mono" style="color:var(--char);margin-bottom:16px;">Advanguard Studio · Spécialité</div>
+    <h1 style="font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;font-weight:600;max-width:14ch;">
+      {niche.headline} <em style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;">{niche.headlineEm}</em>
+    </h1>
+    <p class="lede" style="max-width:56ch;margin-top:24px;font-size:1.1rem;line-height:1.6;color:var(--char);">
+      {niche.lede}
+    </p>
+    <div style="margin-top:36px;">
+      <a href="/contact" class="pill filled" data-umami-event={`cta_niche_${slug}`}>{niche.cta} →</a>
+    </div>
+  </section>
+
+  <!-- PROBLEM / SOLUTION -->
+  <section class="wrap" style="padding-top:60px;padding-bottom:60px;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+    <div style="border:1px solid var(--rule);border-radius:12px;padding:32px;">
+      <div class="mono" style="color:var(--char);margin-bottom:12px;">Problème</div>
+      <h2 style="font-size:1.3rem;font-weight:600;margin-bottom:16px;">{niche.problem.title}</h2>
+      <p style="color:var(--char);line-height:1.65;font-size:0.95rem;">{niche.problem.text}</p>
+    </div>
+    <div style="border:1px solid var(--orange);border-radius:12px;padding:32px;">
+      <div class="mono" style="color:var(--orange);margin-bottom:12px;">Solution</div>
+      <h2 style="font-size:1.3rem;font-weight:600;margin-bottom:16px;">{niche.solution.title}</h2>
+      <p style="color:var(--char);line-height:1.65;font-size:0.95rem;">{niche.solution.text}</p>
+    </div>
+  </section>
+
+  <!-- DELIVERABLES -->
+  <section class="wrap" style="padding-bottom:60px;">
+    <div class="section-head" style="margin-bottom:32px;">
+      <div class="k">Livrables</div>
+      <h2>Ce que vous <em>recevez.</em></h2>
+    </div>
+    <ul style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;list-style:none;">
+      {niche.deliverables.map((d) => (
+        <li style="border:1px solid var(--rule);border-radius:8px;padding:14px 18px;font-size:0.9rem;display:flex;align-items:center;gap:10px;">
+          <span style="color:var(--orange);font-size:1.1rem;">✓</span>
+          {d}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- RELATED SERVICE -->
+  <section class="wrap" style="padding-bottom:40px;">
+    <a
+      href={`/services/${niche.relatedService}`}
+      style="display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);border-radius:8px;padding:12px 20px;font-size:0.85rem;color:var(--char);transition:border-color 0.15s;"
+    >
+      <span class="mono">Service associé</span>
+      <span style="color:var(--ink);">{niche.relatedServiceLabel} →</span>
+    </a>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <section class="cta wrap" style="margin-bottom:80px;">
+    <div class="cta-inner">
+      <h2>Prêt à démarrer <em>votre projet ?</em></h2>
+      <p>Un appel de 30 min suffit pour savoir si on peut travailler ensemble.</p>
+      <div class="cta-row">
+        <a href="/contact" class="pill filled" data-umami-event={`cta_niche_bottom_${slug}`}>{niche.cta} →</a>
+        <a href="/processus" class="pill">Notre processus</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+@media (max-width: 640px) {
+  section[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
