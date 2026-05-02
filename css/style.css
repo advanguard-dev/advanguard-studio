@@ -539,7 +539,7 @@
       grid-template-columns: 220px 1fr auto;
       gap: 24px;
       align-items: end;
-      padding: 120px 0 40px
+      padding: 80px 0 32px
     }
 
     .section-head .k {
@@ -679,7 +679,7 @@
 
     /* ============ PHILOSOPHY SLAB ============ */
     .slab {
-      margin: 120px 0 0;
+      margin: 80px 0 0;
       background: var(--paper);
       color: var(--ink);
       border-radius: 4px;
@@ -947,7 +947,7 @@
 
     /* ============ CONSULTING ============ */
     .consult {
-      margin-top: 120px;
+      margin-top: 80px;
       background: var(--paper);
       color: var(--ink);
       border-radius: 4px;
@@ -1040,7 +1040,7 @@
 
     /* ============ PROCESS ============ */
     .process {
-      padding: 120px 0 40px
+      padding: 80px 0 40px
     }
 
     .proc-grid {
@@ -1131,7 +1131,7 @@
 
     /* ============ WORK PLACEHOLDERS ============ */
     .work {
-      padding: 120px 0
+      padding: 80px 0
     }
 
     .work-grid {
@@ -1333,8 +1333,8 @@
     }
 
     .cta {
-      margin: 120px 0 0;
-      padding: 160px 28px 160px;
+      margin: 80px 0 0;
+      padding: 100px 28px;
       background: var(--paper);
       color: var(--ink);
       text-align: center;
@@ -1528,6 +1528,10 @@
       .hero-gradient .tag-br { font-size: 10px; padding: 10px 14px }
       .hero-sub { grid-template-columns: 1fr; gap: 28px; margin-top: 32px }
       .hero-lede { font-size: 18px }
+
+      /* Search — icon-only on tablet/mobile */
+      .search-trigger span { display: none }
+      .search-trigger { border-radius: 50%; padding: 8px; aspect-ratio: 1; justify-content: center }
 
       /* Layout */
       .section-head { grid-template-columns: 1fr; padding: 80px 0 32px }

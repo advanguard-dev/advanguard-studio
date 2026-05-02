@@ -223,6 +223,7 @@ export default function Search({ items }: Props) {
   return (
     <>
       <button
+        className="search-trigger"
         style={S.trigger}
         onClick={open_}
         aria-label="Rechercher"
