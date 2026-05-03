@@ -1,0 +1,237 @@
+---
+export const prerender = true;
+
+import Layout from "../layouts/Layout.astro";
+import { createReader } from "@keystatic/core/reader";
+import keystaticConfig from "../../keystatic.config";
+
+const reader = createReader(process.cwd(), keystaticConfig);
+const services = await reader.collections.services.all();
+const formations = await reader.collections.formations.all();
+
+const formationVisuals = {
+  ia: { cls: "v-ia", inner: "<span>MACHINE // LEARN</span>" },
+  branding: { cls: "v-brand", inner: "" },
+  reseaux: {
+    cls: "v-soc",
+    inner:
+      '<div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>',
+  },
+  projet: {
+    cls: "v-proj",
+    inner: '<div class="bars"><i></i><i></i><i></i><i></i><i></i></div>',
+  },
+};
+---
+
+<Layout
+  title="Advanguard Studio — Branding & Design · Bruxelles"
+  description="Studio de design indépendant basé à Bruxelles. Identité de marque, web, formations IA et consulting pour startups et PME. Belgium, worldwide."
+  ogTitle="Advanguard Studio — Branding & Design · Bruxelles"
+  canonical="https://advanguardstudio.com/"
+>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="studio-status">
+      <div class="status-item">
+        <span class="status-dot"></span>
+        <span class="status-label">Statut</span>
+        <span class="status-value">Disponible</span>
+        <span class="status-badge">Q2 2026</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">Réponse</span>
+        <span class="status-value">&lt; 24 h</span>
+      </div>
+      <div class="status-item" style="margin-left:auto;border-right:none">
+        <span class="status-label" id="liveClock"></span>
+      </div>
+    </div>
+
+    <h1 class="hero-title">
+      <div class="row">
+        <span>L'agence</span><span><em>polyvalente,</em></span>
+      </div>
+      <div class="row">
+        <span class="underline">Qui vous rend</span><span
+          ><em>remarquable.</em>
+        </span>
+      </div>
+    </h1>
+
+    <div class="hero-gradient">
+      <div class="tag-tl">ADVG / 001 —<br />Visual System</div>
+      <div class="tag-tr">
+        Pantone 199 C<br />Pantone 2665 C<br />Pantone 426 C
+      </div>
+      <div class="monogram">A<span class="r">A</span><sup>®</sup></div>
+      <div class="tag-bl">Studio • Branding • Formations</div>
+      <div class="tag-br">v.26 — Avant-garde<br />depuis 2024</div>
+    </div>
+
+    <div class="hero-sub">
+      <p class="hero-lede">
+        Advanguard Studio, studio de design indépendant <strong
+          >en Belgique</strong
+        >, conçoit des marques, des interfaces et des systèmes visuels pour les
+        entreprises qui veulent compter. <em>Stratégie, design, formation.</em> Trois
+        disciplines, une seule exigence : que chaque livrable travaille pour vous
+        longtemps après la remise.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="wrap" id="services">
+    <div class="section-head">
+      <div class="k">Services</div>
+      <h2>Huit terrains <em>de jeu,</em> un seul standard.</h2>
+      <div style="text-align:right" class="mono">
+        {services.length} / Disciplines
+      </div>
+    </div>
+
+    <div class="srv">
+      {
+        services.map((s) => (
+          <a class="srv-row" href={`/services/${s.slug}`}>
+            <div class="num">{s.entry.displayNum}</div>
+            <div class="name">
+              {s.entry.title}{" "}
+              {s.entry.titleItalic && <em set:html={s.entry.titleItalic} />}
+            </div>
+            <div class="tags">
+              {s.entry.tags.map((t) => (
+                <span>{t}</span>
+              ))}
+            </div>
+            <div class="arrow">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- FORMATIONS -->
+  <section class="wrap" id="formations">
+    <div class="section-head">
+      <div class="k">Formations</div>
+      <h2>Apprendre <em>en faisant,</em> avec des praticiens.</h2>
+      <div style="text-align:right" class="mono">
+        {formations.length} / Programmes
+      </div>
+    </div>
+
+    <div class="form-grid">
+      {
+        formations.map((f) => {
+          const v = formationVisuals[f.slug];
+          return (
+            <div class="form-card">
+              <div class="top">
+                <span>{f.entry.displayNum}</span>
+                <span>{f.entry.badge}</span>
+              </div>
+              {v && <div class={`visual ${v.cls}`} set:html={v.inner} />}
+              <h4>
+                {f.entry.title}{" "}
+                {f.entry.titleItalic && <em set:html={f.entry.titleItalic} />}
+              </h4>
+              <p>{f.entry.lede}</p>
+              <a
+                href={`/formations/${f.slug}`}
+                class="mono"
+                style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;color:var(--orange)"
+              >
+                Voir le programme →
+              </a>
+            </div>
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="ctaSection">
+    <div class="cta-inner">
+      <h2>Prêt à démarrer <em>votre projet ?</em></h2>
+      <p>
+        Un appel de 30 min suffit pour savoir si on peut travailler ensemble.
+      </p>
+      <div class="cta-row">
+        <a
+          href="https://cal.com/advanguard-studio-drcpag/discovery-call-30min"
+          target="_blank"
+          rel="noopener"
+          class="pill filled cta-mobile-btn"
+          data-umami-event="cta_hero_contact">Démarrer un projet →</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- custom cursor OUI! — desktop only -->
+  <div id="ctaCursor" aria-hidden="true">OUI&nbsp;!</div>
+</Layout>
+
+<script is:inline>
+  (function () {
+    var el = document.getElementById("liveClock");
+    if (!el) return;
+    function tick() {
+      var d = new Date();
+      el.textContent =
+        d.toLocaleTimeString("fr-BE", {
+          hour: "2-digit",
+          minute: "2-digit",
+          timeZone: "Europe/Brussels",
+        }) + " BXL";
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // CTA section — entire section navigates to cal.com on click
+  (function () {
+    var CAL_URL =
+      "https://cal.com/advanguard-studio-drcpag/discovery-call-30min";
+    var section = document.getElementById("ctaSection");
+    if (!section) return;
+    section.addEventListener("click", function (e) {
+      if (e.target.closest("a,button")) return;
+      window.open(CAL_URL, "_blank", "noopener");
+    });
+  })();
+
+  // CTA custom cursor — desktop (fine pointer) only
+  (function () {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+    var cursor = document.getElementById("ctaCursor");
+    var section = document.getElementById("ctaSection");
+    if (!cursor || !section) return;
+    var active = false;
+    document.addEventListener("mousemove", function (e) {
+      if (!active) return;
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+    section.addEventListener("mouseenter", function () {
+      active = true;
+      cursor.classList.add("visible");
+    });
+    section.addEventListener("mouseleave", function () {
+      active = false;
+      cursor.classList.remove("visible");
+    });
+  })();
+</script>
