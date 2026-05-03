@@ -20,11 +20,11 @@ const projets = await reader.collections.projets.all()
   <section class="wrap projets-wrap">
     <div class="hero-top">Projets — Advanguard Studio</div>
     <h1>Ce qu'on a <em>construit.</em></h1>
-    <p class="lede">Une sélection de projets récents — identités, interfaces, formations. Clients <strong>en Belgique</strong> et worldwide. Chaque mission est différente, l'exigence reste la même.</p>
+    <p class="lede">Une sélection de projets récents : identités, interfaces, formations. Clients <strong>en Belgique</strong> et worldwide. Chaque mission est différente, l'exigence reste la même.</p>
 
     {projets.length === 0 ? (
       <div style="padding:80px 0;text-align:center;color:var(--char)">
-        <p>Les projets arrivent bientôt — <a href="/contact">contactez-nous</a> pour en discuter.</p>
+        <p>Les projets arrivent bientôt, <a href="/contact">contactez-nous</a> pour en discuter.</p>
       </div>
     ) : (
       <div class="work-grid">

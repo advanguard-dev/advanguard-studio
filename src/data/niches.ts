@@ -27,12 +27,12 @@ export const niches: NichePage[] = [
     problem: {
       title: 'Le problème des startups',
       text:
-        'Un logo Canva et une palette copiée sur Dribbble ne suffisent plus dès que vous levez des fonds ou recrutez. Les investisseurs voient des centaines de pitchs — une marque faible signale un manque de maturité opérationnelle.',
+        'Un logo Canva et une palette copiée sur Dribbble ne suffisent plus dès que vous levez des fonds ou recrutez. Les investisseurs voient des centaines de pitchs : une marque faible signale un manque de maturité opérationnelle.',
     },
     solution: {
       title: 'Notre approche',
       text:
-        'On part de votre positionnement, pas d\'une moodboard. Stratégie de marque, naming si nécessaire, système visuel modulaire pensé pour scaler — du favicon à l\'investor deck.',
+        'On part de votre positionnement, pas d\'une moodboard. Stratégie de marque, naming si nécessaire, système visuel modulaire pensé pour scaler, du favicon à l\'investor deck.',
     },
     deliverables: ['Plateforme de marque', 'Logotype + variantes', 'Système visuel complet', 'Brand guidelines', 'Kit investisseurs'],
     relatedService: 'branding',
@@ -47,7 +47,7 @@ export const niches: NichePage[] = [
     headline: 'Branding pour',
     headlineEm: 'l\'immobilier belge.',
     lede:
-      'Dans un secteur où les agences se ressemblent toutes, une identité forte est le premier filtre de qualification client. On vous aide à sortir du lot — sans quitter le sérieux.',
+      'Dans un secteur où les agences se ressemblent toutes, une identité forte est le premier filtre de qualification client. On vous aide à sortir du lot, sans quitter le sérieux.',
     problem: {
       title: 'Indifférenciation visuelle',
       text:
@@ -97,11 +97,11 @@ export const niches: NichePage[] = [
     headline: 'Sites web pour',
     headlineEm: 'produits SaaS.',
     lede:
-      'Votre landing page convertit ou elle coûte. On conçoit des sites qui transforment des visiteurs sceptiques en trials actifs — sans template, sans compromis.',
+      'Votre landing page convertit ou elle coûte. On conçoit des sites qui transforment des visiteurs sceptiques en trials actifs, sans template ni compromis.',
     problem: {
       title: 'Le template ne suffit plus',
       text:
-        'Webflow templates et thèmes WordPress racontent tous la même histoire. Quand votre produit est différencié, votre site doit l\'être aussi — et performer à 95+ sur PageSpeed.',
+        'Webflow templates et thèmes WordPress racontent tous la même histoire. Quand votre produit est différencié, votre site doit l\'être aussi, et performer à 95+ sur PageSpeed.',
     },
     solution: {
       title: 'Stack moderne, résultats mesurables',
@@ -121,7 +121,7 @@ export const niches: NichePage[] = [
     headline: 'E-commerce',
     headlineEm: 'orienté conversion.',
     lede:
-      'Un e-commerce performant n\'est pas une question de plateforme — c\'est une question de design. On conçoit des expériences d\'achat qui réduisent l\'abandon panier et augmentent le panier moyen.',
+      'Un e-commerce performant n\'est pas une question de plateforme : c\'est une question de design. On conçoit des expériences d\'achat qui réduisent l\'abandon panier et augmentent le panier moyen.',
     problem: {
       title: 'L\'UX fait la différence',
       text:
@@ -145,11 +145,11 @@ export const niches: NichePage[] = [
     headline: 'Votre site web,',
     headlineEm: 'fait à Bruxelles.',
     lede:
-      'Studio de design indépendant au cœur de Bruxelles. On conçoit des sites qui ressemblent à votre entreprise — pas à un template vu mille fois.',
+      'Studio de design indépendant au cœur de Bruxelles. On conçoit des sites qui ressemblent à votre entreprise, pas à un template vu mille fois.',
     problem: {
       title: 'Trop de sites, pas assez de sites',
       text:
-        'À Bruxelles, les agences web sont nombreuses mais les sites livrés se ressemblent : lents, génériques, mal référencés. Vous méritez mieux — à un tarif de studio, pas de grande agence.',
+        'À Bruxelles, les agences web sont nombreuses mais les sites livrés se ressemblent : lents, génériques, mal référencés. Vous méritez mieux, à un tarif de studio et pas de grande agence.',
     },
     solution: {
       title: 'Studio indépendant, qualité senior',
@@ -171,7 +171,7 @@ export const niches: NichePage[] = [
     headline: 'Formation IA',
     headlineEm: 'pour vos équipes.',
     lede:
-      'L\'IA ne remplace pas vos équipes — elle multiplie leur capacité. On forme vos collaborateurs aux outils concrets, pas aux concepts abstraits. Résultats en 48h garantis.',
+      'L\'IA ne remplace pas vos équipes : elle multiplie leur capacité. On forme vos collaborateurs aux outils concrets, pas aux concepts abstraits. Résultats en 48h garantis.',
     problem: {
       title: 'Adoption bloquée au théorique',
       text:
@@ -195,7 +195,7 @@ export const niches: NichePage[] = [
     headline: 'IA pour',
     headlineEm: 'décideurs pressés.',
     lede:
-      'Vous n\'avez pas besoin de savoir coder — vous devez comprendre ce que l\'IA change dans votre secteur, quelles décisions elle modifie et comment piloter son adoption dans votre organisation.',
+      'Vous n\'avez pas besoin de savoir coder, vous devez comprendre ce que l\'IA change dans votre secteur, quelles décisions elle modifie et comment piloter son adoption dans votre organisation.',
     problem: {
       title: 'Décider sans comprendre',
       text:
@@ -219,16 +219,16 @@ export const niches: NichePage[] = [
     headline: 'L\'IA accessible',
     headlineEm: 'pour les PME.',
     lede:
-      'Les PME belges peuvent tirer autant profit de l\'IA que les grandes entreprises — à condition d\'avoir accès aux bons outils et à une formation pratique, pas théorique.',
+      'Les PME belges peuvent tirer autant profit de l\'IA que les grandes entreprises, à condition d\'avoir accès aux bons outils et à une formation pratique, pas théorique.',
     problem: {
       title: 'IA réservée aux grandes entreprises ?',
       text:
-        'Formation coûteuses, consultants inaccessibles, outils complexes : les PME ont l\'impression que l\'IA est hors de portée. Ce n\'est plus vrai — si vous avez les bons guides.',
+        'Formation coûteuses, consultants inaccessibles, outils complexes : les PME ont l\'impression que l\'IA est hors de portée. Ce n\'est plus vrai si vous avez les bons guides.',
     },
     solution: {
       title: 'Pratique, abordable, immédiat',
       text:
-        'Formation sur mesure pour votre taille et votre secteur. On identifie les 3 cas d\'usage qui vont changer votre quotidien cette semaine — marketing, admin, production de contenu.',
+        'Formation sur mesure pour votre taille et votre secteur. On identifie les 3 cas d\'usage qui vont changer votre quotidien cette semaine : marketing, admin, production de contenu.',
     },
     deliverables: ['Audit besoins PME', 'Formation 1 journée', 'Sélection outils adaptés', 'Workflows automatisés', 'Support 60 jours'],
     relatedService: 'branding',
@@ -245,7 +245,7 @@ export const niches: NichePage[] = [
     headline: 'Design system',
     headlineEm: 'solide et scalable.',
     lede:
-      'Un design system n\'est pas une bibliothèque de composants — c\'est une langue commune entre design et développement. On vous aide à la construire ou à la réparer.',
+      'Un design system n\'est pas une bibliothèque de composants : c\'est une langue commune entre design et développement. On vous aide à la construire ou à la réparer.',
     problem: {
       title: 'Incohérence qui coûte cher',
       text:
@@ -293,7 +293,7 @@ export const niches: NichePage[] = [
     headline: 'Stratégie de marque',
     headlineEm: 'pour la croissance.',
     lede:
-      'Le design sans stratégie, c\'est de la décoration. On travaille en amont des pixels — positionnement, territoire, personnalité de marque — pour que chaque livrable soit ancré dans une intention claire.',
+      'Le design sans stratégie, c\'est de la décoration. On travaille en amont des pixels : positionnement, territoire, personnalité de marque. Pour que chaque livrable soit ancré dans une intention claire.',
     problem: {
       title: 'Croître sans cap de marque',
       text:
