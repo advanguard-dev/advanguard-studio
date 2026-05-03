@@ -110,7 +110,7 @@ const allSchemas = [organizationSchema, ...jsonLd]
   <meta name="twitter:title" content={ogTitle ?? title}>
   <meta name="twitter:description" content={ogDescription ?? description}>
 
-  {canonical && <link rel="canonical" href={canonical}>}
+  <link rel="canonical" href={pageUrl}>
 
   <!-- JSON-LD Structured Data -->
   {allSchemas.map((schema) => (
