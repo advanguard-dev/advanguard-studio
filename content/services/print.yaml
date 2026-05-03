@@ -2,7 +2,7 @@ displayNum: "A / 08"
 title: "Print"
 titleItalic: "on demand"
 subtitle: "Du physique qui laisse une impression."
-lede: "Collections, packaging, merch, distribution — on conçoit vos supports print et on peut gérer la production et la logistique via nos partenaires. Du fichier à la livraison."
+lede: "Collections, packaging, merch, distribution : on conçoit vos supports print et on peut gérer la production et la logistique via nos partenaires. Du fichier à la livraison."
 tags:
   - Collections
   - Packaging
@@ -14,9 +14,9 @@ details:
   - title: "Design print"
     content: "Mise en page, typographie, préparation des fichiers aux normes d'impression."
   - title: "Packaging"
-    content: "Boîtes, étiquettes, sachets — design et gabarits prêts pour production."
+    content: "Boîtes, étiquettes, sachets : design et gabarits prêts pour production."
   - title: "Merch"
-    content: "T-shirts, tote bags, posters — on sélectionne la qualité, vous choisissez les quantités."
+    content: "T-shirts, tote bags, posters : on sélectionne la qualité, vous choisissez les quantités."
   - title: "Production & distribution"
     content: "Via notre réseau d'imprimeurs partenaires. On gère les délais et la qualité."
 deliverables:

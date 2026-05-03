@@ -4,7 +4,7 @@ title: Web
 titleItalic: '& interfaces'
 subtitle: Des sites qui convertissent.
 lede: >-
-  Sites sur-mesure, Framer, Webflow ou Next.js — peu importe la stack,
+  Sites sur-mesure, Framer, Webflow ou Next.js : peu importe la stack,
   l'exigence reste la même : une interface rapide, belle et qui travaille pour
   vous. Studio web indépendant en Belgique, on couvre du prototype au go-live,
   worldwide.
@@ -30,7 +30,7 @@ details:
       (Core Web Vitals).
   - title: CMS & contenu
     content: >-
-      Keystatic, Sanity, Contentful — vous éditez votre contenu sans toucher au
+      Keystatic, Sanity, Contentful : vous éditez votre contenu sans toucher au
       code.
   - title: Lancement & SEO
     content: Deploy, configuration DNS, SEO on-page, GA4. Prêt à indexer dès le jour 1.
