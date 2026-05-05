@@ -46,15 +46,19 @@ const searchItems: SearchItem[] = [
 ]
 
 const pageUrl = canonical ?? Astro.url.href
+const siteUrl = 'https://www.advanguardstudio.com'
 
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': ['Organization', 'ProfessionalService'],
+  '@id': `${siteUrl}/#organization`,
   name: 'Advanguard Studio',
   alternateName: ['AdVanguard', 'Advanguard'],
-  url: 'https://www.advanguardstudio.com',
-  logo: 'https://www.advanguardstudio.com/logo.svg',
+  url: siteUrl,
+  logo: `${siteUrl}/logo.svg`,
+  image: `${siteUrl}/og-image.png`,
   email: 'hello@advanguardstudio.com',
+  telephone: '+32471375950',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Brussels',
@@ -65,7 +69,40 @@ const organizationSchema = {
   sameAs: [],
 }
 
-const allSchemas = [organizationSchema, ...jsonLd]
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${siteUrl}/#localbusiness`,
+  name: 'Advanguard Studio',
+  url: siteUrl,
+  image: `${siteUrl}/og-image.png`,
+  email: 'hello@advanguardstudio.com',
+  telephone: '+32471375950',
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Brussels',
+    addressCountry: 'BE',
+  },
+  areaServed: {
+    '@type': 'Place',
+    name: 'Worldwide',
+  },
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  url: siteUrl,
+  name: 'Advanguard Studio',
+  inLanguage: ['fr-BE', 'fr', 'en'],
+  publisher: {
+    '@id': `${siteUrl}/#organization`,
+  },
+}
+
+const allSchemas = [organizationSchema, localBusinessSchema, websiteSchema, ...jsonLd]
 ---
 
 <!DOCTYPE html>
@@ -125,6 +162,7 @@ const allSchemas = [organizationSchema, ...jsonLd]
     <div class="nav-links">
       <a href="/#services">Services</a>
       <a href="/#formations">Formations</a>
+      <a href="/a-propos">À propos</a>
       <a href="/consulting">Consulting</a>
       <a href="/processus">Processus</a>
       <a href="/projets">Projets</a>
@@ -145,6 +183,7 @@ const allSchemas = [organizationSchema, ...jsonLd]
     <nav class="mob-links">
       <a href="/#services" class="mob-link">Services</a>
       <a href="/#formations" class="mob-link">Formations</a>
+      <a href="/a-propos" class="mob-link">À propos</a>
       <a href="/consulting" class="mob-link">Consulting</a>
       <a href="/processus" class="mob-link">Processus</a>
       <a href="/projets" class="mob-link">Projets</a>
@@ -166,6 +205,7 @@ const allSchemas = [organizationSchema, ...jsonLd]
       <h6>Studio</h6>
       <ul>
         <li><a href="/processus" style="text-decoration:none;color:inherit;">Processus</a></li>
+        <li><a href="/a-propos" style="text-decoration:none;color:inherit;">À propos</a></li>
         <li><a href="/projets" style="text-decoration:none;color:inherit;">Projets</a></li>
       </ul>
     </div>

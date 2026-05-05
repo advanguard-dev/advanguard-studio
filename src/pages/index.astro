@@ -22,6 +22,37 @@ const formationVisuals = {
     inner: '<div class="bars"><i></i><i></i><i></i><i></i><i></i></div>',
   },
 };
+
+const homeFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Quels services propose votre agence ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Advanguard Studio propose du branding, du web et des interfaces, des formations IA, du consulting, ainsi que des services créatifs comme la direction artistique, la vidéo et l’illustration.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Travaillez-vous uniquement en Belgique ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Le studio est basé à Bruxelles et accompagne des clients en Belgique et à l’international, en présentiel ou à distance.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Sous quel délai répondez-vous à une demande ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nous répondons généralement en moins de 24 heures pour un premier échange et la qualification du besoin.',
+      },
+    },
+  ],
+};
 ---
 
 <Layout
@@ -29,6 +60,7 @@ const formationVisuals = {
   description="Studio de design indépendant basé à Bruxelles. Identité de marque, web, formations IA et consulting pour startups et PME. Belgium, worldwide."
   ogTitle="Advanguard Studio — Branding & Design · Bruxelles"
   canonical="https://www.advanguardstudio.com/"
+  jsonLd={[homeFaqSchema]}
 >
   <!-- HERO -->
   <section class="hero wrap">
