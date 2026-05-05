@@ -5,7 +5,7 @@ import keystatic from '@keystatic/astro'
 import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
-  site: 'https://advanguardstudio.com',
+  site: 'https://www.advanguardstudio.com',
   output: 'static',
   adapter: vercel(),
   integrations: [react(), keystatic(), sitemap()],

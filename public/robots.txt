@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow:
 
-Sitemap: https://advanguardstudio.com/sitemap-index.xml
+Sitemap: https://www.advanguardstudio.com/sitemap-index.xml

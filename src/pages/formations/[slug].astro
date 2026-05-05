@@ -17,7 +17,7 @@ const reader = createReader(process.cwd(), keystaticConfig)
 const formation = await reader.collections.formations.read(slug)
 if (!formation) return Astro.redirect('/404')
 
-const pageUrl = `https://advanguardstudio.com/formations/${slug}`
+const pageUrl = `https://www.advanguardstudio.com/formations/${slug}`
 const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '')
 
 const courseSchema = {
@@ -29,7 +29,7 @@ const courseSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Advanguard Studio',
-    url: 'https://advanguardstudio.com',
+    url: 'https://www.advanguardstudio.com',
   },
 }
 
@@ -37,8 +37,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://advanguardstudio.com' },
-    { '@type': 'ListItem', position: 2, name: 'Formations', item: 'https://advanguardstudio.com/#formations' },
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.advanguardstudio.com' },
+    { '@type': 'ListItem', position: 2, name: 'Formations', item: 'https://www.advanguardstudio.com/#formations' },
     { '@type': 'ListItem', position: 3, name: formation.title, item: pageUrl },
   ],
 }
